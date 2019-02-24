@@ -30,6 +30,7 @@ public:
 	void				get_func(TCHAR*);
 	int					read(unsigned char, char*, int, TCHAR*);
 
-	 usb_dev_handle*    _handle;
+private:
+	usb_dev_handle*    _handle;
 };
 
