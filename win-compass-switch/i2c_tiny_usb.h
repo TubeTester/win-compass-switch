@@ -1,6 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include "lusb0_usb.h"
+#include "atlstr.h"
 
 #define COMPASS_SWITCH_VID  0x0403
 #define COMPASS_SWITCH_PID  0xc631
@@ -25,12 +26,20 @@ class i2c_tiny_usb
 public:
 						i2c_tiny_usb();
 						~i2c_tiny_usb();
-	void				set_handle(usb_dev_handle*);
-	usb_dev_handle*		get_handle(void);
+						
+	bool				init(void);
+	TCHAR *				get_device_state_str(void);
+	TCHAR *				get_device_data_str(void);
+
+private:
 	void				get_func(TCHAR*);
 	int					read(unsigned char, char*, int, TCHAR*);
 
-private:
-	usb_dev_handle*    _handle;
+
+	usb_dev_handle*     handle;
+	struct usb_bus      *bus;
+	struct usb_device   *dev;
+	TCHAR				device_state[1000];
+	TCHAR				device_data[200];
 };
 
