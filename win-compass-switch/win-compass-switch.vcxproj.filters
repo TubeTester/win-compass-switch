@@ -27,12 +27,21 @@
     <ClInclude Include="win-compass-switch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="i2c_tiny_usb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lusb0_usb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="win-compass-switch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i2c_tiny_usb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
